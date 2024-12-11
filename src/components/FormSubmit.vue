@@ -8,7 +8,7 @@ const router = useRouter();
 const formData = reactive({
   name: '',
   tel: '',
-  course: 'Web+Jequery',
+  course: 'Web+Jquery',
   time: '12:30pm-1:45pm',
   project_name: '',
   email: '',
@@ -45,7 +45,7 @@ const submitForm = async () => {
       // Reset the form
       formData.name = '';
       formData.tel = '';
-      formData.course = 'Web+Jequery';
+      formData.course = 'Web+Jquery';
       formData.time = '12:30pm-1:45pm';
       formData.project_name = '';
       formData.email = '';
@@ -108,7 +108,7 @@ const submitForm = async () => {
               class="form-select shadow-none rounded-0 border-secondary-subtle border-1"
               required
             >
-              <option value="Web+Jequery">Web+Jequery</option>
+              <option value="Web+Jquery">Web+Jquery</option>
               <option value="Web+Vue">Web+Vue</option>
               <option value="Reactjs">Reactjs</option>
               <option value="Vuejs">Vuejs</option>
