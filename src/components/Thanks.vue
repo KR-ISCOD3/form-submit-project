@@ -1,5 +1,8 @@
 <template>
-  <div class="container-fluid d-grid align-content-center">
+  <div class="container-fluid d-grid align-content-center position-relative">
+    <div class="position-absolute start-50 translate-middle col-5 text-center" style="top: 60%;" >
+      <img src="../assets/congratulation.gif" alt="" class="w-75">
+    </div>
     <div class="mx-auto">
       <div class="d-flex justify-content-center mb-3">
         <img src="../assets/tonton.gif" alt="" width="150px">

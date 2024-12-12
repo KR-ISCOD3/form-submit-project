@@ -11,7 +11,7 @@ const formData = reactive({
   course: 'Web+Jquery',
   time: '12:30pm-1:45pm',
   project_name: '',
-  email: '',
+  gitlink: '',
   linkDeploy: '',
   date: ''
 });
@@ -34,8 +34,13 @@ const submitForm = async () => {
     const startTime = performance.now(); // Measure request start time
 
     const response = await axios.post(
-      'https://stusubmitsys.onrender.com/students',
-      formData
+      'https://server-stu-submited.onrender.com',
+      formData, 
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
     );
 
     const endTime = performance.now(); // Measure request end time
@@ -48,7 +53,7 @@ const submitForm = async () => {
       formData.course = 'Web+Jquery';
       formData.time = '12:30pm-1:45pm';
       formData.project_name = '';
-      formData.email = '';
+      formData.gitlink = '';
       formData.linkDeploy = '';
 
       localStorage.setItem('formSubmitted', 'true'); // Set the flag in localStorage
@@ -146,11 +151,11 @@ const submitForm = async () => {
           />
         </div>
         <div class="px-2 mt-3">
-          <label for="email" class="fs-4 fw-normal my-1">Link GitHub*</label>
+          <label for="gitlink" class="fs-4 fw-normal my-1">Link GitHub*</label>
           <input
-            v-model="formData.email"
+            v-model="formData.gitlink"
             type="url"
-            id="email"
+            id="gitlink"
             class="form-control shadow-none rounded-0 border-secondary-subtle border-1"
             placeholder="Enter Your GitHub Link"
             required
