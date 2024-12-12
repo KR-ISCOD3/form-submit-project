@@ -19,6 +19,6 @@
 
 <style  scoped>
     .bg-dark-blue{
-        background-color: rgba(21, 21, 112, 0.734);
+        background-color: rgba(4, 7, 71, 0.943);
     }
 </style>

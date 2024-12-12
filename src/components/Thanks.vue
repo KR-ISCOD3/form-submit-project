@@ -9,7 +9,7 @@
       </div>
       <h2 class="font-varela fw-bold text-center">Thank for submited!</h2>
       <p class="text-center font-varela">
-        Good luck for you project!😇 <br>
+        Good luck for your project!😇 <br>
      </p>
     </div>
   </div>
