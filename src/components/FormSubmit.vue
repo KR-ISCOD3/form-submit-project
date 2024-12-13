@@ -1,9 +1,11 @@
 <script setup>
-import { reactive,onMounted } from 'vue';
+import { ref,reactive,onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
 const router = useRouter();
+const loading = ref(false); // Loading state
+
 // Reactive form data
 const formData = reactive({
   name: '',
@@ -25,6 +27,8 @@ onMounted(() => {
 
 // Submit form function
 const submitForm = async () => {
+
+  loading.value = true;
   try {
     if(formData.linkDeploy == ''){
       formData.linkDeploy = "no deploy link"
@@ -64,6 +68,8 @@ const submitForm = async () => {
   } catch (error) {
     console.error('Error:', error);
     alert('An error occurred while submitting the form.');
+  } finally{
+    loading.value = false;
   }
 };
 
@@ -71,7 +77,13 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div class="container-fluid font-varela py-3 py-lg-2">
+  <div v-if="loading" class="position-absolute w-100 h-100 z-2 loadpage d-flex align-content-center">
+    <div style="width: 320px;" class="mx-auto mt-5 pt-5">
+      <img src="../assets/loading.gif" alt="" class="w-100">
+    </div>
+  </div>
+  <div class="container-fluid font-varela py-3 py-lg-2 position-relative">
+    
     <div class="col-md-10 mx-auto rounded-3 fw-bold px-lg-5 py-4">
 
       <h3 class="mb-2 text-center">Form Submit</h3>
@@ -186,5 +198,8 @@ const submitForm = async () => {
 }
 .shadow {
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.712) !important;
+}
+.loadpage{
+  background-color: rgba(0, 0, 0, 0.513);
 }
 </style>
