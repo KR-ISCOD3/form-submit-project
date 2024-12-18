@@ -7,9 +7,9 @@
       <div class="d-flex justify-content-center mb-3">
         <img src="../assets/tonton.gif" alt="" width="150px">
       </div>
-      <h2 class="font-varela fw-bold text-center">Thank for submited!</h2>
+      <h2 class="font-varela fw-bold text-center">Thanks for your submission!</h2>
       <p class="text-center font-varela">
-        Thanks for your submission!😇 <br>
+        Good luck with your project.😇<br>
      </p>
     </div>
   </div>
